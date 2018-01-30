@@ -1,0 +1,487 @@
+.sys-msg,.sys-msg-keep{
+    margin: 10px auto;
+    overflow: hidden;
+    max-width: 25rem;
+    color: #fff;
+    min-width: 10rem;
+    border-radius: 0.8rem;
+}
+
+.sys-msg-chat-end{
+    background-color: transparent;
+    color: #ffffff;
+    text-align: center;
+
+}
+.sys-msg-chat-end .message-text{
+    float: none;
+    padding: 10px 0px;
+}
+.sys-msg-chat-end .button-danger {
+    margin: auto 1.5rem;
+    border: 1px solid #f6383a;
+    padding: 0.4rem;
+    border-radius: 0.4rem
+
+}
+
+
+.msg-type-img{
+    height: 400px;
+    width: 300px;
+    max-width: 70%;
+
+    color: transparent!important;
+    background-size: cover;
+    background-position: center;
+
+}
+.msg-type-img:after,.msg-type-img:before{
+    background-color: transparent!important;
+
+
+}
+
+.sys-msg .message-text,.sys-msg-keep .message-text{
+    background-color: gray;
+    min-width: 10rem;
+    margin-left: 0.8rem;
+}
+
+.sys-broadcast{
+    width: 100%;
+    margin: 10px 0px;
+    border-radius: 0;
+    background-color: #f44336;
+    color: #fff;
+
+    overflow: hidden;
+}
+
+.sys-msg-danger{
+
+}
+
+.message {
+    margin: 10px auto;
+    overflow: hidden;
+    max-width: 25rem;
+    position: relative;
+}
+.message-text {
+    padding: 10px 20px;
+    float: left;
+    clear: both;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 1px;
+}
+.message.left .message-text {
+    margin-right: 70px;
+    margin-left: 20px;
+    background-color: lightgray;
+    float: left;
+}
+.message.right .message-text {
+    /*margin-left: 70px;*/
+    margin-right: 20px;
+    background-color: #f44336;
+    color: #fff;
+    float: right;
+}
+
+
+
+.message-text:last-child:before,
+.message-text:last-child:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 35px;
+    height: 25px;
+    z-index: -1;
+}
+
+.message.right .message-text:before,
+.message.right .message-text:after {
+    border-radius: 0 0 0 50%;
+}
+.message.right .message-text:before {
+    height: 20px;
+    right: -23px;
+    background-color: #f44336;
+}
+.message.right .message-text:after {
+    right: -35px;
+    bottom: -3px;
+    background-color: #eee;
+}
+
+
+.message.left .message-text:before,
+.message.left .message-text:after {
+    border-radius: 0 0 50% 0;
+}
+.message.left .message-text:before {
+    height: 20px;
+    left: -23px;
+    background-color: lightgray;
+}
+.message.left .message-text:after {
+    left: -35px;
+    bottom: -3px;
+    background-color: #eee;
+}
+
+body {
+    font-size: 16px !important;
+}
+
+a, a.button-link{
+    color: #e91e63 !important;
+}
+
+a.disabled {
+    pointer-events: none;
+    color:gray!important;
+}
+
+.page.intro {
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    color: white !important;
+
+}
+
+header.bar.bar-nav {
+    background: transparent;
+
+}
+
+header .title, header a, header .button-nav {
+    color: white !important;
+}
+
+header .title .version {
+    font-size: 0.5rem;
+    position: relative;
+    top: -0.3rem;
+}
+
+
+header a:active, header .button-nav:active {
+    color: lightgrey !important;
+
+}
+
+.chat header.bar.bar-nav {
+    background-color: #e91e63;
+}
+
+.bar:after {
+    background-color: transparent!important;
+}
+
+.intro {
+    display: -webkit-box !important;
+    display: flex !important;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+}
+
+.intro-center {
+    width: 100%;
+}
+
+.intro-text {
+    color: white;;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+.gender-male, .gender-female {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border-radius: 50%;
+
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 9.5px
+}
+.gender-male{
+
+}
+.gender-male .gender-text{
+
+  font-size: 12pt ;
+  position: absolute;
+  left: 32px;
+  bottom: 6px;
+}
+
+.gender-female .gender-text{
+  font-size: 12pt;
+  position: absolute;
+  left: 35.5px;
+    bottom: 6px;
+
+}
+.gender-female {
+    padding-left: 6px;
+
+}
+
+.gender-picker {
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+
+}
+
+.male-selected {
+    background-color: #4a4a4a;
+}
+
+.female-selected {
+    background-color: red;
+}
+
+.vip-code {
+    text-align: center;
+    color: deeppink;
+    font-size: 0.7rem;
+
+}
+
+.start-chat {
+
+    margin-top: 1.8rem;
+
+}
+
+.start-chat .button {
+    border-color: white;
+    color: white;
+    width: 12rem;
+    margin: auto;
+}
+
+.start-chat .button:active {
+    color: lightgrey;
+    border-color: lightgrey;
+}
+
+.msg-footer {
+    display: table-row;
+    padding: 0px!important;
+
+}
+
+.msg-input {
+    display: table-cell;
+    width: 100%;
+    padding-right: 1rem;
+}
+
+.msg-input input {
+    width: 100% !important;
+    height: 1.5rem;
+    font-size: 0.9rem;
+    margin: 0.4rem;
+    position: static;
+}
+
+*::-webkit-input-placeholder {
+    font-size: 0.7rem;
+    position: relative;
+    top: 0.1rem;
+}
+
+.chat-control {
+    display: table-cell;
+    min-width: 4rem;
+    text-align: center;
+
+}
+
+.msg-img {
+    display: table-cell;
+    position: relative !important;
+    overflow: hidden;
+    min-width: 2rem;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.msg-send {
+    display: table-cell;
+    min-width: 3rem;
+    text-align: center
+}
+
+.messages{
+    /*max-width: 25rem;*/
+    /*margin: auto;*/
+    overflow: visible;
+
+    padding-bottom: 70px;
+
+}
+.readSign{
+  float:right;
+  margin-right: 0.5rem;
+  margin-top: 0.8rem;
+  visibility: hidden;
+  font-size: 12px;
+  background-color: lightgray;
+  padding: 2px 5px;
+  border-radius: 4px;
+  position: absolute;
+}
+
+
+/*progress bar*/
+.progress-container{
+    background-color: white;
+    height:5px;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+}
+.progress{
+    background: #e91e63;
+    width: 0%;
+    height: 5px;
+    border-radius: 10px;
+    position: absolute;
+}
+.progress-container .ball{
+    background: #e91e63;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+.informed{
+    color: gray !important;
+    border-color: gray!important;
+}
+
+.popup-captcha{
+    display: -webkit-box!important;
+    display: flex!important;
+    background-color: rgba(0,0,0,0.1);
+    -webkit-box-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    justify-content:center;;
+}
+.popup-captcha .content-block{
+    text-align: center;;
+}
+
+.popup-captcha .close-popup{
+    margin:1rem;
+}
+
+.popup-input-vip,.popup-vip-promote{
+    display: -webkit-box!important;
+    display: flex!important;
+    -webkit-box-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    justify-content:center;;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.popup-input-vip>.content-block{
+    width: 100%;
+    max-width: 18rem;
+    background: white;
+    border-radius: 0.2rem;
+    padding: 1rem 0;
+}
+
+.popup-input-vip .do-not-have-vip{
+    text-align: center;
+    margin-top:1.5rem;
+}
+.popup-vip-promote>.content-block{
+    background: white;
+    border-radius: 0.2rem;
+}
+
+
+.btn-end-chat-promote{
+    margin: 1.5rem;
+    width: 4.5rem;
+}
+
+.advert{
+    color: #e91e63 !important;
+    width: 80% !important;
+    max-width: 15rem;
+    margin: auto
+}
+
+.advert img{
+    border: #e91e63 solid 1px;
+
+}
+
+.font-small {
+    font-size: 0.5rem;
+
+}
+.list-block .item-title.label{
+    width:40% !important;;
+}
+
+.custom-label a{
+    padding:3px;
+    line-height:2rem;
+    color:darkslategray!important;
+
+    /*display: block;*/
+ }
+
+.custom-label a.border{
+    border-radius: 10%;
+    border: solid 1px darkslategray;
+
+}
+
+.custom-label-row{
+    height:2rem;
+}
+
+.partner-label{
+    font-size: 0.5rem;
+    border: solid 1px;
+    border-radius: 10%;
+    padding: 0.12rem 0.28rem;
+    display: inline-block;
+    position: relative;
+    top: -0.1rem;
+    margin: 0rem 0.4rem 0rem 0.2rem;
+}
+.partner-label-container{
+    margin-left: -0.2rem;
+    margin-top: 0.5rem;
+}
+
+.sys-msg-partner-info .message-text{
+    border-radius: 15px!important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    max-width: 90%;
+}
+

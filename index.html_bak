@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="c11.ren,匿名聊天，兴趣爱好，技术交流，资源分享">
+    <title>Freedom Chat | 实时匿名聊天系统</title>
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
+    <link rel="stylesheet" href="/static/css/mdui.min.css"/>
+    <link rel="stylesheet" href="/static/css/bunld.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- removeIf(isDev)-->
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+    <!--endRemoveIf(isDev) -->
+    <%-- <link rel="stylesheet" href="/static/css/font-awesome.css"/> --%>
+    <link rel="stylesheet" href="/static/css/style.css?v=0.0.0.1"/>
+    <style>
+        #background-img {
+            background: url('/static/img/home_bg.png') no-repeat top;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body >
+
+<div class="mdui-appbar mdui-shadow-0">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a href="javascript:;" class="mdui-typo-title">Freedom Chat</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <p class="mdui-p-a-1">当前在线：<span id="current_users">0</span>人</p>
+    </div>
+</div>
+
+<div id="background-img"></div>
+
+<div id="intro" class="mdui-container-fluid" style="padding:0;margin:0;" >
+    <!-- <div class="title mdui-p-b-2">
+        <span class="mdui-text-color-pink-accent">F</span>reedom
+        <span class="mdui-text-color-pink-accent">C</span>hat
+    </div> -->
+
+    <div class="description mdui-typo">
+        <p>实时匿名的在线聊天网站。</p>
+      <!--   <p class="mdui-hidden-sm-down">安全、快速、响应式</p> -->
+    </div>
+
+   
+    <div class="mdui-textfield" style="width: 220px; margin: 0 auto;">
+        <input id="nick_name"  style=" text-align:center"  class="mdui-textfield-input" type="text" placeholder="请输入你的昵称"/>
+    </div>
+	   <!--  <div class="gender-picker"> -->
+	   <!-- <div class="mdui-textfield"> 
+	   		<div style="position:relative;margin:0;">
+		    	<div class="gender-male  fa fa-mars fa-3x male-selected"><div class="gender-text"> 男生</div></div> 
+		    	<div class="gender-female fa fa-venus fa-3x"><div class="gender-text">女生</div></div>
+	    	</div>
+	    </div> -->
+	  <!-- <div class="" >
+    	 性别
+    	<select id="sex" class="mdui-textfield-select" style="width: 60px; margin: 0 auto;" value="0">
+    		<option value="0" selected="selected">女</option>
+    		<option  value="1">男</option>
+    		<option  value="2">保密</option>
+    	</select> 
+    </div>  -->
+    <button class="mdui-btn mdui-btn-raised mdui-color-pink-accent mdui-ripple mdui-m-a-2"
+            onclick="show_signle_dialog()"><i class="mdui-icon material-icons">&#xe420;</i> 开始聊天
+    </button>
+
+    <!-- <p>当前版本：v1.1.2</p> -->
+
+    <div id="footer" class="mdui-container mdui-typo mdui-text-center" style="padding:auto 0;">
+        <p class="mdui-typo-caption">
+           <img style="width:22%;height:22%;" alt="聊天资源" title="技术交流 " src="/static/img/594401799.png"/>
+        </p>
+        <p class="mdui-typo-body-1">
+        	<!-- 快速加群的链接 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=0028ee34b15216e6606ecf397d8cb183713d030f9380ed2549e71690d3339491"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="java大数据机器学习" title="java大数据机器学习"></a> -->
+           <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=0028ee34b15216e6606ecf397d8cb183713d030f9380ed2549e71690d3339491"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="java大数据机器学习" title="java大数据机器学习"></a>QQ群594401799
+        </p>
+        <p class="mdui-typo-caption" style="display:none;">
+            友情链接：<a href="http://www.baidu.com" target="_blank">baidu</a>
+             友情链接：<a href="http://www.hao123.com" target="_blank">hao123</a>
+             友情链接：<a href="http://c11.ren" target="_blank">c11</a>
+        </p>
+    </div>
+
+</div>
+
+<div id="single-chat" class="mdui-dialog">
+    <div class="mdui-dialog-title">
+        <div class="mdui-col-xs-12">
+
+            <div class="mdui-col-xs-6 mdui-text-left">开始聊天&nbsp<a id="userInfo" href="#"></a></div>
+            <div class="mdui-col-xs-6 mdui-text-right">
+                <button onclick="close_dialog()" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"
+                        mdui-dialog-close><i class="mdui-icon material-icons">&#xe14c;</i></button>
+            </div>
+        </div>
+        <div class="mdui-clearfix"></div>
+    </div>
+    <div class="mdui-dialog-content">
+        <div class="chat-body">
+            <p class="mdui-m-b-3"><span class="chat-box-info">系统正在为您匹配好友...</span></p>
+        </div>
+        <div class="chat-footer">
+            <div class="mdui-col-xs-8 mdui-col-md-10">
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">输入聊天消息</label>
+                    <textarea id="chat_msg" class="mdui-textfield-input" maxlength="32"></textarea>
+                </div>
+            </div>
+            <div class="mdui-col-xs-4 mdui-col-md-2 mdui-p-a-4">
+                <button onclick="send_msg()" class="mdui-fab mdui-color-pink-accent mdui-ripple"><i
+                        class="mdui-icon material-icons">&#xe163;</i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="chat_addr" value="120.78.50.208:8081" />
+<script type="text/javascript" src="/static/js/mdui.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
+<script src="//cdn.bootcss.com/moment.js/2.17.1/moment.min.js"></script>
+<script type="text/javascript" src="/static/js/app.js?v=0.0.0.1"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div class="page-header m_head">
+    <h3 class="title">天天双11<span class="glyphicon glyphicon-search"></span></h3>
+</div>
+<div class="homePage">
+    
+    <div class="content">
+    <h3>&nbsp;娇美服饰</h3>
+        <ul class="c_list">
+            <li ng-repeat="item in clothes">
+				<a ng-href="#/goods/{{item.id}}" ><img ng-src="{{item.imgurl}}" alt=""></a>
+				<div>
+					<p>&nbsp;&nbsp;{{item.title}}</p>
+			        <p>价格: <span class="oriprice">{{item.price | currency:'￥'}} </span>
+			            <span class="price">&nbsp;{{item.off}}折</span>
+			        </p>
+				</div>
+            </li>
+        </ul>
+   <!-- <h3>法国香水</h3>
+        <ul class="f_list">
+            <li ng-repeat="item in perfume">
+				<a ng-href="#/goods/{{item.id}}" href="{{item.url}}"><img ng-src="{{item.imgurl}}" alt=""></a>
+            </li>
+        </ul>
+    <h3>西施耳环</h3>
+        <ul class="x_list">
+            <li ng-repeat="item in earing">
+				<a ng-href="#/goods/{{item.id}}" href="{{item.url}}"><img ng-src="{{item.imgurl}}" alt=""></a>
+            </li>
+        </ul>-->
+    </div>
+</div>
